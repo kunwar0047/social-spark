@@ -1,6 +1,7 @@
 package com.socialspark.login.controller;
 
 import java.io.IOException;
+import java.util.Vector;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.socialspark.main.dao.LoginDao;
 import com.socialspark.main.model.Login;
+import com.socialspark.main.model.Users;
 
 /**
  * Servlet implementation class LoginServlet
@@ -57,9 +59,11 @@ public class LoginServlet extends HttpServlet {
             if (loginDao.validate(login)) {
                 HttpSession session = request.getSession();
                  session.setAttribute("username",username);
-                
+                 //Users objUser = new Users();
      			System.out.println("logged in "+username);	
-                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/home.jsp");
+     			//Vector<Users> listOfAllFriends = objUser.allusers(getServletContext(),request);
+    			//session.setAttribute("listOfAllFriends", listOfAllFriends);
+                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/home");
          	    dispatcher.forward(request, response);
             } else {
                 

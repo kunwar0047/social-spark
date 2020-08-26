@@ -40,14 +40,16 @@ window.onload=submitForm;
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="media">
-
+						
                         <div class="media-body">
                             <hr>
-                            <h3><strong>Friend List</strong></h3>
-                            <p>Earth</p>
-                            <a href="<%=request.getContextPath() %>/friendprofile.jsp">Friend Profile</a>
+                            <h3><strong>Friends Chat List</strong></h3>
+                            <c:forEach var="objf" items="${listOfFriends}">
+                            <a href="<%= request.getContextPath() %>/message?receiver=${objf.username}&sender=<%=name%>"><p>${objf.username.toUpperCase()}</p></a>                            
                             <hr>
+                            </c:forEach>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -65,9 +67,6 @@ window.onload=submitForm;
         
         <hr>
 
-<form action="<%= request.getContextPath() %>/AllPosts?user=<%= name %>" METHOD="post" >
-<button type="submit" class="btn btn-primary" id="showpost" >Show My Posts</button>
-</form>
         <div class="panel panel-default">
             <div class="panel-body">
             <form action="<%= request.getContextPath()%>/PostServlet" METHOD="post">
@@ -85,16 +84,13 @@ window.onload=submitForm;
 
             </div>
         </div>
-
-
             <!-- Simple post content example. -->
             <c:forEach var="objPost" items="${listOfAllPosts}">
             <div class="panel panel-default">
                 <div class="panel-body">
 
                     <h4><a href="#" style="text-decoration:none;"><strong>${objPost.ptitle.toUpperCase() }</strong></a> <small><small><a href="#" style="text-decoration:none; color:grey;"></a></small></small></h4>
-                    <hr>
-                    
+                    <hr>                    
                     <div class="post-content">
                         <p>${objPost.pbody }</p>
 
@@ -102,10 +98,10 @@ window.onload=submitForm;
                     <hr>
                     <div>
                       <div class="pull-left btn-group-xs">
-                          <a class="btn btn-default btn-xs" href="<%= request.getContextPath() %>/like.jsp?id=${objPost.pid}" ><i class="fa fa-heart" ></i> ${objPost.plikes } Likes</a>
+                          <a class="btn btn-default btn-xs" href="<%= request.getContextPath() %>/likepost?likeid=${objPost.pid}" ><i class="fa fa-heart" ></i> ${objPost.plikes } Likes</a>
                           <a class="btn btn-default btn-xs" href="<%= request.getContextPath() %>/editpost.jsp?id=${objPost.pid}&title=${objPost.ptitle }&body=${objPost.pbody }">Edit</a>
                           <a class="btn btn-default btn-xs" href="<%= request.getContextPath() %>/deletepost.jsp?id=${objPost.pid}">Delete</a>  
-                          <a class="btn btn-default btn-xs">Posted By- ${objPost.uname }</a>
+                          <a class="btn btn-default btn-xs" >Posted By- ${objPost.uname }</a>
                       </div>
                         <br>
                     </div>
@@ -114,9 +110,9 @@ window.onload=submitForm;
             </div>
             </c:forEach>
 
+
+
                 </div>
-            </div>
-        </div>
 
 </body>
 </html>

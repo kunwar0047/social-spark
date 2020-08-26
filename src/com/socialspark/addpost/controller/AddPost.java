@@ -63,11 +63,7 @@ public class AddPost extends HttpServlet {
 		
 
 	    try (Connection connection = DriverManager
-<<<<<<< HEAD
-	        .getConnection("jdbc:mysql://localhost:3306/SocialSpark?useSSL=false", "root", "dell123");	        
-=======
 	        .getConnection("jdbc:mysql://localhost:3306/SocialSpark?useSSL=false", "root", "varun");	        
->>>>>>> 3d21e81... second commit
 	        PreparedStatement preparedStatement = connection
 	        .prepareStatement("insert into posts(username,ptitle,pbody,pdate) values(?,?,?,?)")) 
 	    {
@@ -84,7 +80,7 @@ public class AddPost extends HttpServlet {
 			preparedStatement.setDate(4, getCurrentDate());
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
-			RequestDispatcher rd=request.getRequestDispatcher("/AllPosts?user="+userid);  			 
+			RequestDispatcher rd=request.getRequestDispatcher("/home");  			 
 		    rd.forward(request, response); 
 		    System.out.println("Redirection");
 	    } catch (SQLException e) {

@@ -20,20 +20,7 @@
 <body>
 <%@ include file="navbar.jsp" %>
         <div style="padding-top:50px;">&nbsp;</div>
-        <div class="col-lg-3 col-md-3 hidden-sm hidden-xs">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="media">
-                        <div class="media-body">
-                            <hr>
-                            <h3><strong>Friend List</strong></h3>
-                            <p>Earth</p>
-                            <hr>                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 
             <!-- Simple post content example. -->
@@ -51,7 +38,7 @@
                     <hr>
                     <div>
                       <div class="pull-left btn-group-xs">
-                          <a class="btn btn-default btn-xs" href="<%= request.getContextPath() %>/like.jsp?id=${objPost.pid}&sourcepage=showall" ><i class="fa fa-heart" ></i> ${objPost.plikes } Likes</a>
+                          <a class="btn btn-default btn-xs" href="<%= request.getContextPath() %>/likepost?likeid=${objPost.pid}&sourcepage=showall" ><i class="fa fa-heart" ></i> ${objPost.plikes } Likes</a>
                         
                           <p class="btn btn-default btn-xs">Posted By- ${objPost.uname }</p>
                       </div>

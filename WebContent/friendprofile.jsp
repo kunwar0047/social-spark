@@ -36,22 +36,15 @@ window.onload=submitForm;
 <%@ include file="/WEB-INF/navbar.jsp" %>
         <div style="padding-top:50px;">&nbsp;
         </div>
-
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
         <div class="panel panel-default">
             <div class="panel-body">
-                <span>
-             
-                    <h1 class="panel-title pull-left" style="font-size:30px;"> <%= name %> </h1>
+                <span>             
+                    <h1 class="panel-title pull-left" style="font-size:30px;"> ${FriendName.toUpperCase()} </h1>
                     </div>
                 </span>
-
             </div>
-        
         <hr>
-
-
-
 
             <!-- Simple post content example. -->
             <c:forEach var="objPost" items="${listOfAllPosts}">

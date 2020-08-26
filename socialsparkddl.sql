@@ -11,8 +11,9 @@ CREATE TABLE `users` (
    `contact` varchar(45) DEFAULT NULL,
    PRIMARY KEY (`id`,`username`)
 );
-insert into users(fname,lname,username,password,address,contact) values('varun','kumar','varun','a','a','123');
-insert into users(fname,lname,username,password,address,contact) values('anu','aloona','anu','a','a','123');
+insert into users(fname,lname,username,password,address,contact) values('kunwar','kohli','kunwar','k','a','123');
+insert into users(fname,lname,username,password,address,contact) values('AMAN','Deep','aman','a','a','123');
+insert into users(fname,lname,username,password,address,contact) values('Deep','singh','deep','a','a','123');
 SELECT * from Users;
 CREATE TABLE posts (
     postid INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -26,12 +27,32 @@ CREATE TABLE posts (
         ON DELETE CASCADE ON UPDATE CASCADE
 );
 CREATE TABLE relationship(
-user_one_name varchar(250) NOT NULL REFERENCES users(username) on delete cascade on update cascade,
-user_two_name varchar(250) NOT NULL REFERENCES users(username) on delete cascade on update cascade,
+user_one_name varchar(250) NOT NULL REFERENCES users(username),
+user_two_name varchar(250) NOT NULL REFERENCES users(username) ,
 status INT NOT NULL default 0,
-action_user_id INT NOT NULL,
-CONSTRAINT CheckOneWay CHECK (user_one_name < user_two_name),
+action_user_name varchar(250) NOT NULL,
+CONSTRAINT CheckOneWay CHECK (user_one_name != user_two_name),
 CONSTRAINT UQ_Friends_Pairs UNIQUE (user_two_name, user_one_name),
 CONSTRAINT PK_Friends_Pairs PRIMARY KEY (user_one_name, user_two_name)
 );
+CREATE TABLE message(
+sender varchar(250) NOT NULL REFERENCES users(username),
+receiver varchar(250) NOT NULL REFERENCES users(username) ,
+message text,
+timesent datetime default CURRENT_TIMESTAMP
+);
+CREATE TABLE notifications(
+id INT AUTO_INCREMENT PRIMARY KEY,
+username varchar(250) NOT NULL REFERENCES users(username),
+notification varchar(250)
+);
+CREATE TRIGGER FriendNotification after INSERT ON relationship FOR EACH ROW
+INSERT INTO notifications
+SET username=new.user_two_name,
+notification=CONCAT(UCASE(new.user_one_name) ,' Started Following You');
+select * from posts;
+CREATE TRIGGER MessageNotification after INSERT ON message FOR EACH ROW
+INSERT INTO notifications
+SET username=new.receiver,
+notification=CONCAT(UCASE(new.sender) ,' Sent You A Message');
 select * from posts;

@@ -43,11 +43,7 @@ public class EditPost extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try (Connection connection = DriverManager
-<<<<<<< HEAD
-				.getConnection("jdbc:mysql://localhost:3306/SocialSpark?useSSL=false", "root", "dell123");	        
-=======
 				.getConnection("jdbc:mysql://localhost:3306/SocialSpark?useSSL=false", "root", "varun");	        
->>>>>>> 3d21e81... second commit
 				PreparedStatement preparedStatement = connection
 				.prepareStatement("UPDATE posts set ptitle=?,pbody=? where postid=?")) 
 				{

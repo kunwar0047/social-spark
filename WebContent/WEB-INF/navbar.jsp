@@ -108,10 +108,12 @@ body {
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="<%= request.getContextPath() %>/showposts.jsp">Home</a></li>
-                                <li><a href="<%= request.getContextPath() %>/home.jsp">My Profile</a></li>
+                                <li><a href="<%= request.getContextPath() %>/home">My Profile</a></li>
+                                <li><a href="<%= request.getContextPath() %>/AllUsers">Search</a></li>
+                                <li><a href="<%= request.getContextPath() %>/settings.jsp">Settings</a></li>
                                 <li><a href="<%= request.getContextPath() %>/logout">LogOut</a></li>
-                                <li><span class="badge badge-important">2</span><a href="#"><i class="fa fa-bell-o fa-lg" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i></a></li>                                
+                                <li><a href="<%= request.getContextPath() %>/notifications"><i class="fa fa-bell-o fa-lg" aria-hidden="true"></i></a></li>
+                                                                
                             </ul>
                         </div>
                     </div>

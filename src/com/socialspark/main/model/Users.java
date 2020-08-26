@@ -1,7 +1,15 @@
 package com.socialspark.main.model;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+
 public class Users {
-	String username;
+	public String username;
 	String password;
 	int uid;
 	public String getUsername() {
@@ -29,5 +37,11 @@ public class Users {
 		super();
 		this.username = username;
 		this.uid = uid;
+
+	}
+	public Users(String username ) {
+		super();
+		this.username = username;
+		
 	}
 }
