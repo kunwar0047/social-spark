@@ -13,7 +13,11 @@ public class LoginDao {
     Class.forName("com.mysql.jdbc.Driver");
 
     try (Connection connection = DriverManager
+<<<<<<< HEAD
         .getConnection("jdbc:mysql://localhost:3306/SocialSpark?useSSL=false", "root", "dell123");
+=======
+        .getConnection("jdbc:mysql://localhost:3306/SocialSpark?useSSL=false", "root", "varun");
+>>>>>>> 3d21e81... second commit
 
         // Step 2:Create a statement using connection object
         PreparedStatement preparedStatement = connection

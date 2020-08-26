@@ -28,4 +28,29 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+<<<<<<< HEAD
+=======
+	<linkedResources>
+		<link>
+			<name>WebContent/lib/jstl-1.2.jar</name>
+			<type>1</type>
+			<location>E:/webshifters/kunwar projects/JSP Social Spark/jstl-1.2.jar</location>
+		</link>
+		<link>
+			<name>WebContent/lib/mysql-connector-java-8.0.20.jar</name>
+			<type>1</type>
+			<location>E:/webshifters/kunwar projects/JSP Social Spark/mysql-connector-java-8.0.20/mysql-connector-java-8.0.20.jar</location>
+		</link>
+		<link>
+			<name>WebContent/WEB-INF/lib/jstl-1.2.jar</name>
+			<type>1</type>
+			<location>E:/webshifters/kunwar projects/JSP Social Spark/jstl-1.2.jar</location>
+		</link>
+		<link>
+			<name>WebContent/WEB-INF/lib/mysql-connector-java-8.0.20.jar</name>
+			<type>1</type>
+			<location>E:/webshifters/kunwar projects/JSP Social Spark/mysql-connector-java-8.0.20/mysql-connector-java-8.0.20.jar</location>
+		</link>
+	</linkedResources>
+>>>>>>> 3d21e81... second commit
 </projectDescription>

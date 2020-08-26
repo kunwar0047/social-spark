@@ -65,7 +65,11 @@ public class RegistrationServlet extends HttpServlet {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+<<<<<<< HEAD
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/home.jsp");
+=======
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/home.jsp");
+>>>>>>> 3d21e81... second commit
 	    dispatcher.forward(request, response);
 	}
 

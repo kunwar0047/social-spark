@@ -63,7 +63,11 @@ public class AddPost extends HttpServlet {
 		
 
 	    try (Connection connection = DriverManager
+<<<<<<< HEAD
 	        .getConnection("jdbc:mysql://localhost:3306/SocialSpark?useSSL=false", "root", "dell123");	        
+=======
+	        .getConnection("jdbc:mysql://localhost:3306/SocialSpark?useSSL=false", "root", "varun");	        
+>>>>>>> 3d21e81... second commit
 	        PreparedStatement preparedStatement = connection
 	        .prepareStatement("insert into posts(username,ptitle,pbody,pdate) values(?,?,?,?)")) 
 	    {
